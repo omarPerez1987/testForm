@@ -1,0 +1,27 @@
+# Node.js
+node_modules/
+
+# Dependencias de desarrollo
+npm-debug.log
+yarn-error.log
+
+# Archivos de construcción y logs
+build/
+dist/
+coverage/
+*.log
+*.log.*
+*.log-*
+*.pid
+*.seed
+*.pid.lock
+*.socket
+*.pdb
+*.db
+*.sqlite
+*.sqlite3
+*.hdb
+*.tmprof
+*.db-shm
+*.db-wal
+*.d.ts
