@@ -1,0 +1,66 @@
+[
+  {
+    "photo": "http://dummyimage.com/155x77.png/cc0000/ffffff",
+    "id": "98poe",
+    "room": "Deluxe A - 13",
+    "bed": "Double Bed",
+    "facilities": [
+      "Swimming Pool",
+      "Air Conditioned",
+      "Breakfast"
+    ],
+    "description": "a feugiat et eros vestibulum",
+    "price": 145,
+    "discount": "20%",
+    "cancel": "vivamus in felis",
+    "status": "Booked"
+  },
+  {
+    "photo": "http://dummyimage.com/155x77.png/5fa2dd/ffffff",
+    "id": "9863mlk",
+    "room": "Deluxe A - 23",
+    "bed": "Suite",
+    "facilities": [
+      "Cleaning",
+      "Grocery",
+      "Shop near"
+    ],
+    "description": "quam pharetra magna ac consequat metus sapien ut",
+    "price": 180,
+    "discount": "",
+    "cancel": "magnis dis parturient montes",
+    "status": "Available"
+  },
+  {
+    "photo": "http://dummyimage.com/155x77.png/5fa2dd/ffffff",
+    "id": "654bnme",
+    "room": "Deluxe A - 17",
+    "bed": "Double Bed",
+    "facilities": [
+      "24/7 Online Support",
+      "Smart Security",
+      "High speed WiFi"
+    ],
+    "description": "nisi eu orci mauris lacinia sapien quis",
+    "price": 250,
+    "discount": "10%",
+    "cancel": "turpis eget elit sodales",
+    "status": "Booked"
+  },
+  {
+    "photo": "http://dummyimage.com/155x77.png/cc0000/ffffff",
+    "id": "986caq",
+    "room": "Deluxe A - 14",
+    "bed": "SIngle Bed",
+    "facilities": [
+      "Shower relax",
+      "Single bed",
+      "Strong Locker"
+    ],
+    "description": "elementum ligula vehicula consequat morbi a ipsum integer a nibh",
+    "price": 100,
+    "discount": "20%",
+    "cancel": "orci vehicula condimentum",
+    "status": "Available"
+  }
+]
