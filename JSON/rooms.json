@@ -11,7 +11,7 @@
     ],
     "description": "a feugiat et eros vestibulum",
     "price": 145,
-    "discount": "20%",
+    "discount": 20,
     "cancel": "vivamus in felis",
     "status": "Booked"
   },
@@ -43,7 +43,7 @@
     ],
     "description": "nisi eu orci mauris lacinia sapien quis",
     "price": 250,
-    "discount": "10%",
+    "discount": 10,
     "cancel": "turpis eget elit sodales",
     "status": "Booked"
   },
@@ -59,7 +59,7 @@
     ],
     "description": "elementum ligula vehicula consequat morbi a ipsum integer a nibh",
     "price": 100,
-    "discount": "20%",
+    "discount": 20,
     "cancel": "orci vehicula condimentum",
     "status": "Available"
   }

@@ -10,6 +10,7 @@
         "checkoutTime": "2:05 AM",
         "notes": "",
         "idRoom": "98poe",
+        "discount" : 10,
         "check": "in"
     },
     {
@@ -17,12 +18,13 @@
         "id": "ssvb541",
         "orderDate": "28-Dec-2022",
         "orderTime": "4:40 PM",
-        "checkin": "03-04-2023",
+        "checkin": "03-04-2022",
         "checkinTime": "5:57 PM",
-        "checkout": "23-04-2023",
+        "checkout": "23-04-2022",
         "checkoutTime": "1:06 AM",
         "notes": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. nulla nisl. Nunc nisl.",
         "idRoom": "9863mlk",
+        "discount" : 20,
         "check": "pending"
     },
     {
@@ -36,6 +38,7 @@
         "checkoutTime": "3:27 AM",
         "notes": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. nullam molestie nibh in lectus.",
         "idRoom": "654bnme",
+        "discount" : 5,
         "check": "out"
     },
     {
@@ -49,6 +52,7 @@
         "checkoutTime": "2:40 AM",
         "notes": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
         "idRoom": "986caq",
+        "discount" : 15,
         "check": "in"
     }
 ]

@@ -7,47 +7,72 @@ class Room {
   }
 
   isOccupied(date) {
-    const checkDate = Number(date.split("-").join(""));
+    const checkDate = Number(date.split("-").reverse().join(""));
 
     return this.bookings.some((booking) => {
-      const checkIn = Number(booking.checkin.split("-").join(""));
-      const checkOut = Number(booking.checkout.split("-").join(""));
+      const checkIn = Number(booking.checkin.split("-").reverse().join(""));
+      const checkOut = Number(booking.checkout.split("-").reverse().join(""));
 
       return checkDate >= checkIn && checkDate <= checkOut;
     });
   }
 
   occupancyPercentage(startDate, endDate) {
-  //   const introStartDate = Number(startDate.split("-").join(""));
-  //   const introEndDate = Number(endDate.split("-").join(""));
-  
-  //   const checkIn = Number(this.bookings[0].checkin.split("-").join(""));
-  //   const checkOut = Number(this.bookings[0].checkout.split("-").join(""));
+    const introStartDate = Number(startDate.split("-").reverse().join(""));
+    const introEndDate = Number(endDate.split("-").reverse().join(""));
+    const totalIntro = introEndDate - introStartDate;
 
-  //   const totalIntro = introEndDate - introStartDate;
-  //   const totalCheck = checkOut - checkIn;
-  
-  //   const percentage = (totalIntro / totalCheck);
-  //   return percentage;
+    let sumaTotal = 0;
+
+    this.bookings.forEach((booking) => {
+      const checkInNum = Number(booking.checkin.split("-").reverse().join(""));
+      const checkOutNum = Number(
+        booking.checkout.split("-").reverse().join("")
+      );
+      const duration = checkOutNum - checkInNum + 1;
+
+      if (checkInNum >= introStartDate && checkOutNum <= introEndDate) {
+        sumaTotal += duration;
+      }
+    });
+
+    const percentage = (sumaTotal / totalIntro) * 100;
+    return percentage;
   }
 
-  totalOccupancyPercentage(rooms, startDate, endDate) {}
+  totalOccupancyPercentage(rooms, startDate, endDate) {
+    // let totalOccupancy = 0;
+    // rooms.forEach((room) => {
+    //   totalOccupancy += room.occupancyPercentage(startDate, endDate);
+    // });
+    // const averagePercentage = totalOccupancy / rooms.length;
+    // return averagePercentage;
+  }
 
   availableRooms(rooms, startDate, endDate) {}
 }
 
 // **********************************************************************
 class Booking {
-  constructor(name, email, checkIn, checkOut, room, discount = 0) {
+  constructor(name, email, checkIn, checkOut, discount, room) {
     this.name = name;
     this.email = email;
     this.checkIn = checkIn;
     this.checkOut = checkOut;
-    this.room = room;
     this.discount = discount;
+    this.room = room;
   }
 
-  get fee() {}
+  getFee() {
+    const priceRoom = this.room.price;
+    const discountRoom = this.room.discount / 100;
+    const discountBooking = this.discount / 100;
+
+    const priceRoomWithDiscount = priceRoom - priceRoom * discountRoom;
+    const totalFee = priceRoomWithDiscount - priceRoomWithDiscount * discountBooking;
+
+    return Number(totalFee.toFixed(2));
+  }
 }
 
 module.exports = {
