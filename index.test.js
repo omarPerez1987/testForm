@@ -34,7 +34,7 @@ describe("Clase Room", () => {
         rooms[0].discount,
         bookings
       );
-      const percentage = room.occupancyPercentage("01-01-2022", "31-12-2022");
+      const percentage = room.occupancyPercentage("01-01-2023", "31-12-2023");
       expect(percentage).toBeGreaterThan(0);
       expect(percentage).toBeLessThanOrEqual(100);
     });
@@ -46,27 +46,21 @@ describe("Clase Room", () => {
         rooms[0].discount,
         bookings
       );
-      const percentage = room.occupancyPercentage("01-01-2025", "31-12-2025");
+      const percentage = room.occupancyPercentage("01-01-2000", "31-12-2000");
       expect(percentage).toBe(0);
     });
   });
 
   describe("Método totalOccupancyPercentage", () => {
     test("debería calcular correctamente el porcentaje de ocupación total en todas las habitaciones", () => {
-      // const room = new Room(
-      //   rooms[0].room,
-      //   rooms[0].price,
-      //   rooms[0].discount,
-      //   bookings
-      // );
-
-      // const percentage = room.totalOccupancyPercentage(
-      //   rooms,
-      //   "01-01-2025",
-      //   "31-12-2025"
-      // );
-      // expect(percentage).toBeGreaterThan(0);
-      // expect(percentage).toBeLessThanOrEqual(100);
+      expect(
+        Room.totalOccupancyPercentage(
+          rooms,
+          bookings,
+          "01-01-2025",
+          "31-12-2025"
+        )
+      ).toBeGreaterThan(0);
     });
   });
 
@@ -79,14 +73,14 @@ describe("Clase Room", () => {
 
 describe("Clase Booking", () => {
   describe("deberia retornarme aplicando los 2 descuentos = 104.40", () => {
-    const booking= new Booking(
-      bookings[0].name, 
-      bookings[0].email, 
-      bookings[0].checkIn, 
+    const booking = new Booking(
+      bookings[0].name,
+      bookings[0].email,
+      bookings[0].checkIn,
       bookings[0].checkOut,
       bookings[0].discount, //discount 10
       rooms[0] //price 145, discount 20
-  )
-  expect(booking.getFee()).toBe(104.40)
+    );
+    expect(booking.getFee()).toBe(104.4);
   });
 });

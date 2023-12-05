@@ -40,14 +40,16 @@ class Room {
     return percentage;
   }
 
-  totalOccupancyPercentage(rooms, startDate, endDate) {
-    // let totalOccupancy = 0;
-    // rooms.forEach((room) => {
-    //   totalOccupancy += room.occupancyPercentage(startDate, endDate);
-    // });
-    // const averagePercentage = totalOccupancy / rooms.length;
-    // return averagePercentage;
+  totalOccupancyPercentage(rooms, bookings, startDate, endDate) {
+    console.log(bookings)
+
+    // const totalRooms = rooms.map((room) => {
+    //   [...room, ...bookings]
+    // })
+    // console.log(totalRooms)
+    // return 1
   }
+
 
   availableRooms(rooms, startDate, endDate) {}
 }
