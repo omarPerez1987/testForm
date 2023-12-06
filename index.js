@@ -40,18 +40,44 @@ class Room {
     return percentage;
   }
 
-  totalOccupancyPercentage(rooms, bookings, startDate, endDate) {
-    console.log(bookings)
-
-    // const totalRooms = rooms.map((room) => {
-    //   [...room, ...bookings]
-    // })
-    // console.log(totalRooms)
-    // return 1
+  totalOccupancyPercentage(roomsAndBookings, startDate, endDate) {
+    const introStartDate = Number(startDate.split("-").reverse().join(""));
+    const introEndDate = Number(endDate.split("-").reverse().join(""));
+    const totalIntro = introEndDate - introStartDate;
+    let sumaTotal = 0;
+  
+    roomsAndBookings.forEach((room) => {
+      room.bookings.forEach((booking) => {
+        const checkInNum = Number(booking.checkin.split("-").reverse().join(""));
+        const checkOutNum = Number(booking.checkout.split("-").reverse().join(""));
+        const duration = checkOutNum - checkInNum + 1;
+  
+        if (checkInNum >= introStartDate && checkOutNum <= introEndDate) {
+          sumaTotal += duration;
+        }
+      });
+    });
+  
+    const percentage = (sumaTotal / totalIntro) * 100;
+    return percentage;
   }
 
-
-  availableRooms(rooms, startDate, endDate) {}
+  availableRooms(rooms, startDate, endDate) {
+    const introStartDate = Number(startDate.split("-").reverse().join(""));
+    const introEndDate = Number(endDate.split("-").reverse().join(""));
+    
+    const unoccupiedRooms = rooms.filter((room) => {
+      const isOccupied = room.bookings.some((booking) => {
+        const checkInNum = Number(booking.checkin.split("-").reverse().join(""));
+        const checkOutNum = Number(booking.checkout.split("-").reverse().join(""));
+        return checkInNum <= introEndDate && checkOutNum >= introStartDate;
+      });
+  
+      return !isOccupied;
+    });
+  
+    return unoccupiedRooms;
+  }
 }
 
 // **********************************************************************
@@ -71,7 +97,8 @@ class Booking {
     const discountBooking = this.discount / 100;
 
     const priceRoomWithDiscount = priceRoom - priceRoom * discountRoom;
-    const totalFee = priceRoomWithDiscount - priceRoomWithDiscount * discountBooking;
+    const totalFee =
+      priceRoomWithDiscount - priceRoomWithDiscount * discountBooking;
 
     return Number(totalFee.toFixed(2));
   }
