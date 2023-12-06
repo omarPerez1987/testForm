@@ -70,7 +70,7 @@ class Room {
       const isOccupied = room.bookings.some((booking) => {
         const checkInNum = Number(booking.checkin.split("-").reverse().join(""));
         const checkOutNum = Number(booking.checkout.split("-").reverse().join(""));
-        return checkInNum <= introEndDate && checkOutNum >= introStartDate;
+        return checkInNum >= introStartDate && checkOutNum <= introEndDate;
       });
   
       return !isOccupied;
